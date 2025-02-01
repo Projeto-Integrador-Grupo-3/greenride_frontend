@@ -4,8 +4,8 @@ function Home() {
   return (
     <div>
       <h2>Home</h2>
-      <Link to='/chamarusuario'>
-      <p>Chamar Usuario</p>
+      <Link to='/usuario'>
+      <p>Visualizar Perfil</p>
       </Link>
         
     </div>

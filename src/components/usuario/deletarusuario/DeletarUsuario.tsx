@@ -89,7 +89,7 @@ function DeletarUsuario() {
       }
 
     function retornarPerfil() {
-        navigate("/chamarUsuario")
+        navigate("/Usuario")
     }
 
 

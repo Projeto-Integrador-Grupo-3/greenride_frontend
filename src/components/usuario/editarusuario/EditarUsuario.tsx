@@ -58,7 +58,7 @@ function EditarUsuario() {
   }
 
   function retornar() {
-    navigate('/home');
+    navigate('/usuario');
   }
 
 
@@ -90,13 +90,13 @@ function EditarUsuario() {
   return (
     <div className="container flex flex-col items-center justify-center mx-auto bg-red-100 m-3 p-10 rounded-lg">
             <h1 className="text-4xl text-center my-8">
-                Atualizar Usuario
+                Editar Conta
             </h1>
 
 
             {/* Verifica se está carregando o treino apenas quando há um ID */}
             {carregandoUsuario ? (
-                <div className="text-center">Carregando Usuario...</div> // Mensagem de carregamento
+                <div className="text-center">Carregando Conta...</div> // Mensagem de carregamento
             ) : (
                 <form className="w-1/2 flex flex-col gap-4" onSubmit={atualizarUsuario}>
                     <div className="flex flex-col gap-2">
@@ -140,7 +140,7 @@ function EditarUsuario() {
                     <div>
 
                       <button>
-                        <Link to='/chamarusuario'>
+                        <Link to='/usuario'>
                           Cancelar
                         </Link>
                       </button>
@@ -152,7 +152,7 @@ function EditarUsuario() {
                           {isLoading ? (
                               <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} />
                           ) : (
-                              <span> Atualizar</span>
+                              <span> Atualizar Conta</span>
                           )}
                       </button>
                     </div>

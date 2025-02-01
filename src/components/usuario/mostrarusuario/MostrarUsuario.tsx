@@ -61,14 +61,14 @@ function ChamarUsuario() {
       <div className="flex space-x-2">
         <Link to={`/editarusuario/${usuario?.id}`}>
           <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-1 px-3 rounded-lg transition-colors shadow-md text-sm">
-            Editar
+            Editar Perfil
           </button>
         </Link>
 
         {/* Deletar Usuário */}
         <Link to={`/deletarusuario/${usuario?.id}`}>
           <button className="bg-red-800 hover:bg-red-900 text-white font-semibold py-1 px-3 rounded-lg transition-colors shadow-md text-sm">
-            Deletar
+            Deletar Conta
           </button>
         </Link>
       </div>
