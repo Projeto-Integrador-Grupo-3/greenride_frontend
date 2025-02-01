@@ -46,6 +46,13 @@ function ChamarUsuario() {
 
   return (
     <div>
+
+      <div>
+      <img 
+                className='rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10' 
+                src={usuario?.foto} alt={`Foto de perfil`} width="150px" height="100px"/>
+      </div>
+
       <div>
         <h2 className="text-2xl font-bold mb-4">Nome: {usuario?.nome}</h2>
         <p className="text-lg font-light">Usuário: {usuario?.usuario}</p>
