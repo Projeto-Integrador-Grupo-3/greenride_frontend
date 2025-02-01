@@ -2,10 +2,10 @@ import { useState, useContext, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
 import { RotatingLines } from "react-loader-spinner"
-import { buscar, deletar } from "../../service/Service"
+import { buscar, deletar } from "../../../service/Service"
 
-import { AuthContext } from "../../context/AuthContext";
-import Usuario from "../../models/Usuario";
+import { AuthContext } from "../../../context/AuthContext";
+import Usuario from "../../../models/Usuario";
 
 
 
@@ -78,37 +78,38 @@ function DeletarUsuario() {
 
 
         setIsLoading(false)
-        retornar()
+        logout()
     }
 
 
-    function retornar() {
-        navigate("/home")
+    function logout() {
+        handleLogout();
+        alert('Usuario desconectado com sucesso!');
+        navigate('/login');
+      }
+
+    function retornarPerfil() {
+        navigate("/chamarUsuario")
     }
 
 
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar Usuario</h1>
+            <h1 className='text-4xl text-center my-4'>Deletar Conta de Usuario</h1>
 
 
             <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar a usuario a seguir?
+                Deseja deletar sua conta?
             </p>
 
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header
-                    className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                    Usuario
-                </header>
-                <div className="p-4">
-                    <p className='text-xl h-full'>{usuario.nome}</p>
-                </div>
+            <h2 className="text-2xl font-bold mb-4">Nome: {usuario.nome}</h2>
+            <p className="text-lg font-light">Usuário: {usuario.usuario}</p>
                 <div className="flex">
                     <button
                         className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
-                        onClick={retornar}>
+                        onClick={retornarPerfil}>
                         Não
                     </button>
                     <button

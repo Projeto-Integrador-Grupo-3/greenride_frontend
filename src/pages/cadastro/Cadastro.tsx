@@ -159,7 +159,7 @@ function Cadastro() {
                       width="24"
                       visible={true}
                     /> :
-                      <span>cadaastrar</span>
+                      <span>cadastrar</span>
                     }
                 
               </button>

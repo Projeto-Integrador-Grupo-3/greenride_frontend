@@ -4,7 +4,8 @@ import Cadastro from './pages/cadastro/Cadastro';
 import Login from './pages/login/Login';
 import { AuthProvider } from './context/AuthContext';
 import Home from './pages/home/Home';
-import DeletarUsuario from './components/deletarusuario/DeletarUsuario';
+import ChamarUsuario from './components/usuario/mostrarusuario/MostrarUsuario';
+import DeletarUsuario from './components/usuario/deletarusuario/DeletarUsuario';
 
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/home" element={<Home/>} />
-        <Route path="/usuario" element={<DeletarUsuario/>} />
+        <Route path="/chamarusuario" element={<ChamarUsuario/>} />
+        <Route path="/deletarusuario/:id" element={<DeletarUsuario/>} />
+        <Route path="/editarusuario" element={<Cadastro/>} />
         <Route path="/cadastro" element={<Cadastro/>} />
         <Route path="/login" element={<Login/>} />
       </Routes>

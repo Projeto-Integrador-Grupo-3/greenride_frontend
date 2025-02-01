@@ -24,7 +24,7 @@ export function AuthProvider({ children }: AuthProvidersProps) {
 
 
     const [usuariolog, setUsuario] = useState<UsuarioLogin>({
-        id: undefined,
+        id: 0,
         nome: '',
         usuario: '',
         senha: '',
