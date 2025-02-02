@@ -78,7 +78,7 @@ function Cadastro() {
           <form className='flex justify-center items-center flex-col w-2/3 gap-3' 
             onSubmit={cadastrarNovoUsuario}>
             <h2 className='text-slate-900 text-5xl'>
-            cadastrar usuario
+            Cadastrar usuario
             </h2>
             <div className="flex flex-col w-full">
               <label htmlFor="nome">Nome</label>
@@ -159,7 +159,7 @@ function Cadastro() {
                       width="24"
                       visible={true}
                     /> :
-                      <span>cadastrar</span>
+                      <span>Cadastrar</span>
                     }
                 
               </button>
