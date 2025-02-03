@@ -13,6 +13,8 @@ import Footer from './components/footer/Footer';
 import FormCorrida from './components/corrida/formcorrida/FormCorrida';
 import ListaCorrida from './components/corrida/listacorrida/ListarCorrida';
 import FormMotorista from './components/motorista/formmotorista/FormMotorista';
+import Sobre from './pages/sobre/Sobre';
+
 
 
 function App() {
@@ -20,10 +22,11 @@ function App() {
     <>
     <AuthProvider>
       <BrowserRouter>
-        {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route path="/home" element={<Home/>} />
+        <Route path="/sobre" element={<Sobre/>} />
         <Route path="/usuario" element={<Usuario/>} />
         <Route path="/solicitarcorrida" element={<FormCorrida/>} />
         <Route path="/listarcorrida" element={<ListaCorrida/>} />
@@ -32,9 +35,8 @@ function App() {
         <Route path="/formmotorista" element={<FormMotorista/>} />
         <Route path="/cadastro" element={<CadastroUsuario />} />
         <Route path="/login" element={<Login/>} />
-        
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
      </BrowserRouter>
     </AuthProvider>
     </>

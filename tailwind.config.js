@@ -1,9 +1,16 @@
-export default {
-  content: ["./index.html",
-"./src/**/*.{js,ts,jsx,tsx}",],
+module.exports = {
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary-900': '#08190a', // Verde escuro
+        'primary-500': '#035f05', // Verde médio
+        'primary-300': '#95a68f', // Verde claro
+        'primary-100': '#cdcebe', // Bege claro
+      },
+    },
   },
   plugins: [],
-}
-
+};
