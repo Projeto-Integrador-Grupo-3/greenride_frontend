@@ -11,19 +11,20 @@ function EditarUsuario() {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const [usuario, setUsuario] = useState<Usuario>({ 
-    id: 0, 
-    nome: '', 
-    usuario: '',
-    foto:'',
-    senha:''
-  
-  });
-
   const { id } = useParams<{ id: string }>();
 
   const { usuariolog, handleLogout } = useContext(AuthContext);
   const token = usuariolog.token;
+
+  const [usuario, setUsuario] = useState<Usuario>({ 
+    id: 0, 
+    nome: '', 
+    usuario: '',
+    tipo:usuariolog.tipo,
+    foto:'',
+    senha:''
+  
+  });
 
   async function buscarUsuarioPorId(id: String) {
     try {

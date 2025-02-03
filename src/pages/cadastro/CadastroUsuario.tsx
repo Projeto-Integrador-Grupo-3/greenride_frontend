@@ -17,12 +17,13 @@ function CadastroUsuario() {
       id: undefined,
       nome: '',
       usuario: '',
+      tipo:'',
       senha: '',
       foto: ''
 
     })
 
-
+console.log(usuario)
     useEffect(() => {
       if (usuario.id !== undefined){
         retornar()
@@ -33,12 +34,11 @@ function CadastroUsuario() {
       navigate('/login')
     }
   
-    function atualizarEstado(e: ChangeEvent<HTMLInputElement>){
+    function atualizarEstado(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
       setUsuario({
         ...usuario,
         [e.target.name]: e.target.value
-      })
-  
+      });
     }
   
     function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>){
@@ -104,6 +104,24 @@ function CadastroUsuario() {
                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
             </div>
+
+            <div className="flex flex-col w-full">
+              <label htmlFor="tipo">Tipo de Usuario</label>
+              <select 
+                name="tipo" 
+                id="tipo" 
+                className='border p-2 border-slate-800 rounded'
+                value={usuario.tipo} // Utiliza o valor do estado para definir a opção selecionada
+                onChange={(e: ChangeEvent<HTMLSelectElement>) => 
+                  atualizarEstado(e) // Atualiza o estado com o tipo selecionado
+                }
+              >
+                <option value="">Selecione um tipo de usuario</option>
+                <option value="passageiro">Passageiro</option>  {/* Corrigido para "passageiro" no valor */}
+                <option value="motorista">Motorista</option>    {/* Corrigido para "motorista" no valor */}
+              </select>
+            </div>
+
             <div className="flex flex-col w-full">
               <label htmlFor="foto">Foto</label>
               <input

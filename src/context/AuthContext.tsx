@@ -27,6 +27,7 @@ export function AuthProvider({ children }: AuthProvidersProps) {
         id: 0,
         nome: '',
         usuario: '',
+        tipo:'',
         senha: '',
         foto:'',
         token: ''
@@ -59,6 +60,7 @@ export function AuthProvider({ children }: AuthProvidersProps) {
             id: 0,
             nome: '',
             usuario: '',
+            tipo:'',
             senha: '',
             foto:'',
             token: ''

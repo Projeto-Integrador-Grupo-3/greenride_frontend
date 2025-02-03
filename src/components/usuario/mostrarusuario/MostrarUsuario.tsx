@@ -55,6 +55,7 @@ function ChamarUsuario() {
 
       <div>
         <h2 className="text-2xl font-bold mb-4">Nome: {usuario?.nome}</h2>
+        <p className="text-lg font-light">Tipo: {usuario?.tipo}</p>
         <p className="text-lg font-light">Usuário: {usuario?.usuario}</p>
       </div>
 

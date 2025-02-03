@@ -14,9 +14,10 @@ function Login() {
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({} as UsuarioLogin );
 
     useEffect(() => {
-        if (usuariolog && usuariolog.token && usuariolog.token !== "") {
+        if (usuariolog && usuariolog.token && usuariolog.token !== "" ) {
             navigate('/home');
         }
+        
     }, [usuariolog]);
 
 
