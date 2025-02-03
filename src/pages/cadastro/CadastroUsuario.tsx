@@ -5,7 +5,7 @@ import {  cadastrarUsuario } from "../../service/Service"
 import { RotatingLines } from "react-loader-spinner"
 
 
-function Cadastro() {
+function CadastroUsuario() {
 
     const navigate = useNavigate()
     
@@ -170,5 +170,5 @@ function Cadastro() {
     )
   }
   
-  export default Cadastro
+  export default CadastroUsuario
   
