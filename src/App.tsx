@@ -14,6 +14,7 @@ import FormCorrida from './components/corrida/formcorrida/FormCorrida';
 import ListaCorrida from './components/corrida/listacorrida/ListarCorrida';
 import FormMotorista from './components/motorista/formmotorista/FormMotorista';
 import Sobre from './pages/sobre/Sobre';
+import Viajar from './pages/viajar/Viajar';
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/formmotorista" element={<FormMotorista/>} />
         <Route path="/cadastro" element={<CadastroUsuario />} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/viajar" element={<Viajar />} />
       </Routes>
       <Footer />
      </BrowserRouter>

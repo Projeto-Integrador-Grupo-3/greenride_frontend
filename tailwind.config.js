@@ -9,6 +9,10 @@ module.exports = {
         'primary-500': '#035f05', // Verde médio
         'primary-300': '#95a68f', // Verde claro
         'primary-100': '#cdcebe', // Bege claro
+        corVerdeFundo: "#95A68F",
+        corVerdeEscuro: "#08190A",
+        corVerdeClaro: "#CDCEBE",
+        corVerde: "#035F05",
       },
     },
   },

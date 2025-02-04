@@ -4,6 +4,7 @@ import { AuthContext } from "../../context/AuthContext";
 
 function Home() {
   const navigate = useNavigate();
+
   const { usuariolog } = useContext(AuthContext);
   const token = usuariolog.token;
 
@@ -22,19 +23,21 @@ function Home() {
             <h2 className="text-7xl font-bold mb-8 text-primary-500">
               Viaje com a greenride! Emissão de carbono zero!
             </h2>
+
             <Link
               to="/solicitarcorrida"
               className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition duration-300"
             >
               Solicitar Corrida
             </Link>
+
           </div>
         ) : (
           <div>
             <h2 className="text-4xl font-bold mb-8 text-gray-800">Bem-vindo, Motorista</h2>
             <Link
               to="/formmotorista"
-              className="inline-block bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+              className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition duration-300"
             >
               Finalize o seu cadastro
             </Link>

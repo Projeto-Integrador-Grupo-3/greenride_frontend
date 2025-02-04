@@ -142,7 +142,7 @@ function FormCorrida() {
 
 
 
-            <div className=" flex flex-col rounded-2xl  bg-white items-center justify-center p-10">
+            <div className=" flex flex-col rounded-2xl  bg-white items-center justify-center p-7 mt-9">
 
                 <h1 className="text-2xl text-center my-8">
 
