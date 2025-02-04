@@ -15,6 +15,7 @@ import ListaCorrida from './components/corrida/listacorrida/ListarCorrida';
 import FormMotorista from './components/motorista/formmotorista/FormMotorista';
 import Sobre from './pages/sobre/Sobre';
 import Viajar from './pages/viajar/Viajar';
+import Dirigir from './pages/dirigir/Dirigir';
 
 
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/cadastro" element={<CadastroUsuario />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/viajar" element={<Viajar />} />
+        <Route path='/dirigir' element={<Dirigir />}></Route>
       </Routes>
       <Footer />
      </BrowserRouter>

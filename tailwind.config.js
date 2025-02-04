@@ -12,6 +12,7 @@ module.exports = {
         corVerdeFundo: "#95A68F",
         corVerdeEscuro: "#08190A",
         corVerdeClaro: "#CDCEBE",
+        corVerdeClaroMaisClaro: "#F9F9F6",
         corVerde: "#035F05",
       },
     },

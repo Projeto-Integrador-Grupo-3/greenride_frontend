@@ -5,26 +5,33 @@ import { AuthContext } from "../../../context/AuthContext";
 import { atualizar, buscar } from "../../../service/Service";
 import { RotatingLines } from "react-loader-spinner";
 
+
 function EditarUsuario() {
+
 
   const navigate = useNavigate();
 
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
+
   const { id } = useParams<{ id: string }>();
+
 
   const { usuariolog, handleLogout } = useContext(AuthContext);
   const token = usuariolog.token;
 
-  const [usuario, setUsuario] = useState<Usuario>({ 
-    id: 0, 
-    nome: '', 
+
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: 0,
+    nome: '',
     usuario: '',
     tipo:usuariolog.tipo,
     foto:'',
     senha:''
-  
+ 
   });
+
 
   async function buscarUsuarioPorId(id: String) {
     try {
@@ -38,6 +45,7 @@ function EditarUsuario() {
     }
 }
 
+
   useEffect(() => {
     if (token === '') {
         alert('Você precisa estar logado');
@@ -45,11 +53,13 @@ function EditarUsuario() {
     }
   }, [token]);
 
+
   useEffect(() => {
     if (id !== undefined) {
         buscarUsuarioPorId(id);
     }
   }, [id]);
+
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
     setUsuario({
@@ -58,15 +68,18 @@ function EditarUsuario() {
     });
   }
 
+
   function retornar() {
-    navigate('/usuario');
+    navigate('/home');
   }
+
+
 
 
   async function atualizarUsuario(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
-    
+   
         try {
             await atualizar(`/usuario`, usuario, setUsuario, {
                 headers: { Authorization: token },
@@ -79,75 +92,87 @@ function EditarUsuario() {
                 alert('Erro ao atualizar o Usuario');
             }
         }
-    
+   
+
+
 
 
     setIsLoading(false);
     retornar();
   }
 
+
   const carregandoUsuario = usuario.id === 0 && id !== undefined;
 
+
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto bg-red-100 m-3 p-10 rounded-lg">
-            <h1 className="text-4xl text-center my-8">
+    <div className="flex">
+    <div className="w-2/4 mt-20 mb-5 pb-10 flex flex-col items-center justify-center mx-auto  bg-primary-300  rounded-lg">
+            <h1 className="text-4xl text-center text-white font-bold my-8">
                 Editar Conta
             </h1>
+
+
 
 
             {/* Verifica se está carregando o treino apenas quando há um ID */}
             {carregandoUsuario ? (
                 <div className="text-center">Carregando Conta...</div> // Mensagem de carregamento
             ) : (
-                <form className="w-1/2 flex flex-col gap-4" onSubmit={atualizarUsuario}>
-                    <div className="flex flex-col gap-2">
-                        <div>
-                          <label htmlFor="nome">Nome</label>
+                <form className="w-4/5 items-center flex flex-col gap-4" onSubmit={atualizarUsuario}>
+                    <div className="w-full flex flex-col justify-center items-center  gap-2">
+                        <div className="w-4/5">
+                          <label htmlFor="nome" className="p-4">Nome:</label>
                           <input
                               type="text"
                               placeholder="Nome"
                               name="nome"
-                              className="border-2 border-slate-700 rounded p-2"
+                              className="border-2 border-slate-700 rounded p-2 w-4/5"
                               value={usuario?.nome}
                               onChange={atualizarEstado}
                         />
                         </div>
 
-                        <div>
-                          <label htmlFor="foto">Foto</label>
+
+                        <div className="w-4/5">
+                          <label htmlFor="foto" className="p-4">Foto:</label>
                           <input
                               type="text"
                               placeholder="Foto"
                               name="foto"
-                              className="border-2 border-slate-700 rounded p-2"
+                              className="border-2 ml-3 border-slate-700 rounded p-2 w-4/5"
                               value={usuario.foto}
                               onChange={atualizarEstado}
                           />
                         </div>
 
-                        <div>
-                          <label htmlFor="usuario">Usuario</label>
+
+                        <div className="w-4/5">
+                          <label htmlFor="usuario" className="p-3">Usuario:</label>
                           <input
                               type="text"
                               placeholder="Usuario"
                               name="usuarios"
-                              className="border-2 border-slate-700 rounded p-2"
+                              className="border-2 border-slate-700 rounded p-2 w-4/5"
                               value={usuario.usuario}
                               onChange={atualizarEstado}
                           />
                         </div>
                     </div>
 
-                    <div>
+
+                    <div className="flex justify-center gap-4">
+
 
                       <button>
-                        <Link to='/usuario'>
+                        <Link to='/home'  className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition duration-300">
                           Cancelar
                         </Link>
                       </button>
 
+
                       <button
-                          className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                          className="inline-block bg-green-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-green-600 transition duration-300"
                           type="submit"
                       >
                           {isLoading ? (
@@ -160,7 +185,9 @@ function EditarUsuario() {
                 </form>
             )}
         </div>
+        </div>
   )
 }
+
 
 export default EditarUsuario

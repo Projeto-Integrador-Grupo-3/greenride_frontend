@@ -5,14 +5,20 @@ import { AuthContext } from "../../../context/AuthContext";
 import Motorista from "../../../models/Motorista";
 
 
+
+
 function FormMotorista() {
 
 
+
+
     const navigate = useNavigate()
-    
+   
+
 
     const { usuariolog } = useContext(AuthContext);
     const token = usuariolog.token;
+
 
     const [motorista, setMotorista] = useState<Motorista>({
         id: undefined,
@@ -23,8 +29,10 @@ function FormMotorista() {
         placa: '',
 
 
+
+
     })
-    
+   
     useEffect(() => {
         if (token === '') {
             alert('Você precisa estar logado');
@@ -33,9 +41,13 @@ function FormMotorista() {
     }, [token]);
 
 
+
+
     function retornar() {
         navigate(`/home`)
     }
+
+
 
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
@@ -45,7 +57,13 @@ function FormMotorista() {
         })
 
 
+
+
     }
+
+
+
+
 
 
 
@@ -53,7 +71,9 @@ function FormMotorista() {
     async function cadastrarMotorista(e: FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
+
         if(motorista.carro !== '' && motorista.placa !== ''){
+
 
             try {
                 await cadastrar('/motorista', motorista, setMotorista, {
@@ -63,7 +83,7 @@ function FormMotorista() {
             } catch (error) {
                 alert('Erro ao cadastrar o motorista!')
             }
-    
+   
            
         }else{
             alert('OBS: Carro e Placa são Obrigatórios!')
@@ -72,25 +92,27 @@ function FormMotorista() {
     }
 
 
+
+
     return (
 
 
-        <div className="container flex flex-col items-center justify-center mx-auto bg-red-100 m-3 p-10 rounded-lg">
-            <h1 className="text-4xl text-center my-8">
-                Corrida
-            </h1>
 
-            <form className="w-1/2 flex flex-col gap-4"
+
+        <div className=" flex flex-col items-center justify-center rounded-lg">
+           
+            <form className="w-4/5 flex flex-col gap-4"
                 onSubmit={cadastrarMotorista}
             >
                 <div className="flex flex-col gap-2">
+
 
                     <label htmlFor="carro">Carro</label>
                     <input
                         type="text"
                         placeholder="Modelo do Carro"
                         name="carro"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className=" border-2 border-slate-700 rounded p-2"
                         value={motorista.carro}
                         onChange={atualizarEstado}
                     />
@@ -113,28 +135,26 @@ function FormMotorista() {
                         onChange={atualizarEstado}
                     />
 
+
                 </div>
                 <button
-                    className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                    className="rounded font-semibold text-black bg-[#CDCEBE] hover:bg-[#95A65F]
+                    w-4/5 py-2 my-3 mx-auto flex justify-center"
                     type="submit"
                 >
+                    Finalizar Cadastro
                    
-                    cadastrar
-                    
                 </button>
 
-                <button
-                    className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 
-                    w-1/2 py-2 mx-auto flex justify-center">
-                
-                <Link to='/' >
-                    cancelar
-                </Link>
-                </button>
 
             </form>
 
+
         </div>
+
+
+
+
 
 
 
@@ -142,4 +162,5 @@ function FormMotorista() {
     )
 }
 export default FormMotorista;
+
 
