@@ -153,7 +153,7 @@ function EditarUsuario() {
                               type="text"
                               placeholder="Usuario"
                               name="usuarios"
-                              className="border-2 border-slate-700 rounded p-2 w-4/5"
+                              className="border-2 border-slate-700 rounded p-2 w-4/6"
                               value={usuario.usuario}
                               onChange={atualizarEstado}
                           />

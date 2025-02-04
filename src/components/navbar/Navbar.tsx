@@ -74,6 +74,8 @@ const Navbar = () => {
           {token !== '' ? (
             <div className="hidden md:flex items-center space-x-8 relative">
               <Link to="/home" className="text-white hover:font-bold transition">Início</Link>
+                 <Link to="/sobre" className="text-white hover:font-bold transition">Sobre</Link>
+              
 
 
               {/* Botão Conta */}
